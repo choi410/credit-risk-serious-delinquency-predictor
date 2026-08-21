@@ -1,0 +1,45 @@
+{
+  "program": "개인의 신용 및 재무정보를 활용한 향후 2년 내 심각한 연체 위험 예측 프로그램",
+  "target": "SeriousDlqin2yrs",
+  "model": "Histogram Gradient Boosting",
+  "preprocessing": "basic: special-value cleaning + 3 indicators + median imputation",
+  "imbalance_strategy": "none",
+  "calibration": "raw",
+  "threshold": 0.07424190003697577,
+  "threshold_rule": "maximum precision subject to OOF recall >= 0.75",
+  "threshold_interpretation": "project review cutoff, not a legal approval threshold or literal 7.42% default probability",
+  "input_columns": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "NumberOfTime30-59DaysPastDueNotWorse",
+    "DebtRatio",
+    "MonthlyIncome",
+    "NumberOfOpenCreditLinesAndLoans",
+    "NumberOfTimes90DaysLate",
+    "NumberRealEstateLoansOrLines",
+    "NumberOfTime60-89DaysPastDueNotWorse",
+    "NumberOfDependents"
+  ],
+  "training_rows": 150000,
+  "training_positive_rate": 0.06684,
+  "random_state": 42,
+  "holdout_metrics_confirmatory": {
+    "roc_auc": 0.8684379335640181,
+    "pr_auc": 0.4102092639488756,
+    "recall": 0.7546134663341646,
+    "precision": 0.22913827048311375,
+    "f1": 0.35153345724907065
+  },
+  "labels": {
+    "1": "대출 보류(추가 심사)",
+    "0": "1차 기준 통과"
+  },
+  "training_file_sha256": "1bd46da486a5708c58c7b01a034fae2a13b327f6f7b62ea7ba4fe3b5824b24ac",
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  }
+}
