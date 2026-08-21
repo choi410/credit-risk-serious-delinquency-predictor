@@ -7,5 +7,7 @@
 1차 기준 통과 비율,77.88%
 적용 임계값,0.074241900037
 사용 모델,Histogram Gradient Boosting
+클러스터링 모델,Gaussian Mixture Model
+군집 수,2
 정렬 기준,RiskScore 내림차순
 판정 주의사항,추가 심사 대상은 실제 대출 거절 확정이 아님
