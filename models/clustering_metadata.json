@@ -1,0 +1,66 @@
+{
+  "purpose": "customer segmentation; target excluded from clustering fit",
+  "algorithm": "Gaussian Mixture Model",
+  "covariance_type": "diag",
+  "n_clusters": 2,
+  "cluster_id_order": "ascending feature-based credit stress",
+  "segment_names": {
+    "0": "상대적 안정군",
+    "1": "연체 이력 집중군"
+  },
+  "input_columns": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "NumberOfTime30-59DaysPastDueNotWorse",
+    "DebtRatio",
+    "MonthlyIncome",
+    "NumberOfOpenCreditLinesAndLoans",
+    "NumberOfTimes90DaysLate",
+    "NumberRealEstateLoansOrLines",
+    "NumberOfTime60-89DaysPastDueNotWorse",
+    "NumberOfDependents"
+  ],
+  "processed_columns": [
+    "RevolvingUtilizationOfUnsecuredLines",
+    "age",
+    "NumberOfTime30-59DaysPastDueNotWorse",
+    "DebtRatio",
+    "MonthlyIncome",
+    "NumberOfOpenCreditLinesAndLoans",
+    "NumberOfTimes90DaysLate",
+    "NumberRealEstateLoansOrLines",
+    "NumberOfTime60-89DaysPastDueNotWorse",
+    "NumberOfDependents"
+  ],
+  "preprocessing": {
+    "special_values": "96/98 delinquency values converted to missing with indicator",
+    "age_zero": "converted to missing",
+    "imputation": "median fitted on training data",
+    "winsorization": "0.1% and 99.9% training quantiles",
+    "skew_transform": "log1p on nonnegative skewed features",
+    "scaling": "RobustScaler, 10th to 90th percentile range"
+  },
+  "selection_rule": "GMM chosen for probabilistic membership; minimum BIC among converged GMM candidates with minimum cluster share >= 2%",
+  "selection_sample_rows": 50000,
+  "silhouette_sample_rows": 3000,
+  "candidate_clusters": [
+    2,
+    6
+  ],
+  "target_used_for_fit": false,
+  "target_used_for_posthoc_interpretation": true,
+  "used_as_classifier_feature": false,
+  "classifier_feature_note": "segmentation is reported separately so the previously validated HGB score and threshold remain unchanged",
+  "training_rows": 150000,
+  "pca_explained_variance_ratio": [
+    0.3038248579230615,
+    0.1642454892300354
+  ],
+  "environment": {
+    "python": "3.14.6",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scikit_learn": "1.9.0",
+    "joblib": "1.5.3"
+  }
+}

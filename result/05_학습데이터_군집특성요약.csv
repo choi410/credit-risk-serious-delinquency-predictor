@@ -1,0 +1,3 @@
+﻿ClusterID,SegmentName,CustomerCount,Share,ClusterConfidenceMean,Median_RevolvingUtilizationOfUnsecuredLines,Median_age,Median_NumberOfTime30-59DaysPastDueNotWorse,Median_DebtRatio,Median_MonthlyIncome,Median_NumberOfOpenCreditLinesAndLoans,Median_NumberOfTimes90DaysLate,Median_NumberRealEstateLoansOrLines,Median_NumberOfTime60-89DaysPastDueNotWorse,Median_NumberOfDependents
+0,상대적 안정군,134599,0.8973266666666667,0.999526800575282,0.129216456,53.0,0.0,0.361220731,5573.5,8.0,0.0,1.0,0.0,0.0
+1,연체 이력 집중군,15401,0.10267333333333334,0.9980551659742647,0.7509038,47.0,0.0,0.431142214,3811.0,6.0,1.0,0.0,0.0,0.0
